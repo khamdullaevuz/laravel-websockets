@@ -1,7 +1,6 @@
 <div>
     <form wire:submit="sent">
         <div>
-            <x-label for="body" value="{{ __('Text') }}" />
             <x-input id="body" wire:model="body" class="block mt-1 w-full" type="text" name="body" :value="old('body')" required autofocus autocomplete="name" />
         </div>
         <div class="flex items-center justify-end mt-4">
