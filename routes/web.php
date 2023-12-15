@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ChatController;
+use App\Livewire\Chat;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/dashboard');
 
-Route::get('/transactions', [TransactionController::class, 'index']);
-Route::get('/transactions/check', [TransactionController::class, 'checkStatus']);
+Route::get('/transactions', [ChatController::class, 'index']);
+Route::get('/transactions/check', [ChatController::class, 'checkStatus']);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('/chats', Chat::class)->name('chats');
+    Route::get('/chatroom/{id}', [ChatController::class, 'show'])->name('chats.show');
+});
