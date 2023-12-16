@@ -31,13 +31,7 @@ return [
             'capacity' => null,
             'enable_client_messages' => true,
             'enable_statistics' => true,
-            'encrypted' => true,
-        ],
-        'ssl' => [
-            'local_cert' => '/etc/letsencrypt/live/chat.bizdaarzon.uz/fullchain.pem',
-            'local_pk' => '/etc/letsencrypt/live/chat.bizdaarzon.uz/privkey.pem',
-            'passphrase' => null,
-            'verify_peer' => false,
+            'encrypted' => false,
         ],
     ],
 
