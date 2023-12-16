@@ -29,8 +29,15 @@ return [
             'secret' => env('PUSHER_APP_SECRET'),
             'path' => env('PUSHER_APP_PATH'),
             'capacity' => null,
-            'enable_client_messages' => false,
+            'enable_client_messages' => true,
             'enable_statistics' => true,
+            'encrypted' => true,
+        ],
+        'ssl' => [
+            'local_cert' => '/etc/letsencrypt/live/chat.bizdaarzon.uz/fullchain.pem',
+            'local_pk' => '/etc/letsencrypt/live/chat.bizdaarzon.uz/privkey.pem',
+            'passphrase' => null,
+            'verify_peer' => false,
         ],
     ],
 
