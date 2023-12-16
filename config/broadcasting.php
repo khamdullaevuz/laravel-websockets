@@ -38,9 +38,9 @@ return [
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
                 'encrypted' => true,
-                'host' => 'chat.bizdaarzon.uz',
+                'host' => env('PUSHER_HOST', 'chat.bizdaarzon.uz'),
                 'port' => 6001,
-                'scheme' => 'https'
+                'scheme' => env('PUSHER_SCHEME', 'https')
             ],
             'client_options' => [
 //                CURLOPT_SSL_VERIFYHOST => 0,
