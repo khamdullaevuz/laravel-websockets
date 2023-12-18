@@ -30,4 +30,9 @@ Route::middleware([
     })->name('dashboard');
     Route::get('/chats', Chat::class)->name('chats');
     Route::get('/chatroom/{id}', [ChatController::class, 'show'])->name('chats.show');
+    Route::get('/get-token', function(){
+       $user = auth()->user();
+       $token = $user->createToken('token-name');
+       return $token->plainTextToken;
+    });
 });
