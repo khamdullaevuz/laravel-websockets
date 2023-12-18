@@ -33,6 +33,9 @@ Route::middleware([
     Route::get('/get-token', function(){
        $user = auth()->user();
        $token = $user->createToken('token-name');
-       return $token->plainTextToken;
+       return response()->json([
+           'token' => $token->plainTextToken,
+           'type' => "Bearer",
+       ]);
     });
 });
