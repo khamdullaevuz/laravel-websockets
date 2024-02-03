@@ -39,7 +39,7 @@ return [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
                 'encrypted' => true,
                 'host' => env('PUSHER_HOST', 'chat.bizdaarzon.uz'),
-                'port' => 6001,
+                'port' => 6002,
                 'scheme' => env('PUSHER_SCHEME', 'https')
             ],
             'client_options' => [
