@@ -22,10 +22,10 @@ window.Pusher = Pusher;
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: "As3Wret12",//import.meta.env.VITE_PUSHER_APP_KEY,
+    key: import.meta.env.VITE_PUSHER_APP_KEY,
     cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER ?? 'mt1',
-    wsHost: 'server.bizdaarzon.uz',//window.location.hostname,
-    wsPort: 6002,
+    wsHost: window.location.hostname,
+    wsPort: 6001,
     forceTLS: false,
     disableStats: true,
     enabledTransports: ['ws', 'wss']
